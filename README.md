@@ -35,6 +35,7 @@ In this project, we are deploying a Wordpress website on AWS. We use some core A
 ### 1. Set up the VPC
   - Go to the AWS console and create a VPC
   - Use all default settings for "VPC only" but add a name tag (mine is MyVPC) and change the IPV4 CIDR to 10.0.0.0/16
+  - After it is created, select it, go to "Actions", click "Edit VPC settings" and make sure both DNS settings are enabled
 ### 2. Set up an Internet Gateway
   - Go to the Internet gateway section and create an Internet gateway
   - Add a name tag (mine is myInternetGateway)
