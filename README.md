@@ -49,7 +49,16 @@ In this project, we are deploying a Wordpress website on AWS. We use some core A
   - Name them accordingly, and make sure to switch the IPV4 subnet CIDR blocks, from 10.0.2.0/24 to 10.0.5.0/24
   - Once these are created, if you filter just the VPC we made, there should be a total of 6 subnets.
 ### 5. Set up Public Route Table
-  - Create a route table under the VPC we made and name it, mine is myRouteTable
+  - Create a route table under the VPC we made and name it, mine is Public Route Table
   - Next, we are going to edit the routes of the route table. Edit routes, and then add another route under the 0.0.0.0/0 destination with the target being our internet gateway we made
   - Then, associate the 2 public subnets we made through the Subnet Associations tab
+### 6. Create the NAT Gateways
+  - We will create 2 NAT Gateways, one for each public subnet
+  - Name them accordingly for each AZ and create the NAT Gateway in each respective public subnet we created
+  - Allocate an elastic IP as well for each NAT Gateway
+### 7. Set up Private Route Tables
+  - We will create 2 route tables for each NAT gateway
+  - Name them respectively for each AZ
+  - Edit the routes like before for the public route tables, but instead of the target being the internet gateway make it the respective NAT Gateway
+  - After the routes are done, associate the respective instance and data subnets as done before
 
