@@ -20,3 +20,7 @@ This is a beginner project to get some hands-on practice with AWS technologies. 
   - IAM
 
 </details>
+
+## Architecture Diagram
+
+
