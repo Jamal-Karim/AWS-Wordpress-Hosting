@@ -44,4 +44,8 @@ In this project, we are deploying a Wordpress website on AWS. We use some core A
   - Create one subnet under the VPC just made, name it Public Subnet 1, choose one of the AZs, and the IPV4 subnet CIDR block should be 10.0.0.0/24
   - For the other public subnet, repeat the steps but change the name to Public Subnet 2, choose the other AZ, and the IPV4 should now be 10.0.1.0/24
   - The next thing to do is for each of these subnets, go to "Actions", edit the subnet settings, and then enable the auto-assign IPV4 addresses
-### 4.
+### 4. Set up Route Table
+  - Create a route table under the VPC we made and name it, mine is myRouteTable
+  - Next, we are going to edit the routes of the route table. Edit routes, and then add another route under the 0.0.0.0/0 destination with the target being our internet gateway we made
+  - Then, associate the 2 public subnets we made through the Subnet Associations tab
+
