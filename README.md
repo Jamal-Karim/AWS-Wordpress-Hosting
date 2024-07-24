@@ -40,3 +40,8 @@ In this project, we are deploying a Wordpress website on AWS. We use some core A
   - Go to the Internet gateway section and create an Internet gateway
   - Add a name tag (mine is myInternetGateway)
   - After it is created, select it, go to the "Actions" dropdown select "Attach to VPC" and attach it to the VPC we just made
+### 3. Set up Public Subnets
+  - Create one subnet under the VPC just made, name it Public Subnet 1, choose one of the AZs, and the IPV4 subnet CIDR block should be 10.0.0.0/24
+  - For the other public subnet, repeat the steps but change the name to Public Subnet 2, choose the other AZ, and the IPV4 should now be 10.0.1.0/24
+  - The next thing to do is for each of these subnets, go to "Actions", edit the subnet settings, and then enable the auto-assign IPV4 addresses
+### 4.
