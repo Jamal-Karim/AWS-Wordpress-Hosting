@@ -71,3 +71,7 @@ In this project, we are deploying a Wordpress website on AWS. We use some core A
   - Create a security group and set the name and description the same (ex: ALB Security Group)
   - Add inbound rules for each one, the configurations for each one are provided above
   - After making all of these security groups we have 6 total security groups in the VPC, these 5 made and the default one
+### 9. Starting Database Creation
+  - Create a subnet group with the name and description of "database subnets" under our VPC
+  - Select the 2 AZs that we've used and choose private database subnets
+
