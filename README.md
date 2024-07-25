@@ -61,4 +61,13 @@ In this project, we are deploying a Wordpress website on AWS. We use some core A
   - Name them respectively for each AZ
   - Edit the routes like before for the public route tables, but instead of the target being the internet gateway make it the respective NAT Gateway
   - After the routes are done, associate the respective instance and data subnets as done before
-
+### 8. Create Security Groups
+  - There will be a security group for 5 different parts
+    - ALB (Type: HTTP/HTTPS, Source: 0.0.0.0/0)
+    - SSH (Type: SSH, Source: My IP)
+    - Webserver (Type: HTTP/HTTPS and SSH, Source: ALB and SSH)
+    - Database (Type: MySQL, Source: Webserver)
+    - EFS (Type: NFS and SSH, Source: Webserver and SSH)
+  - Create a security group and set the name and description the same (ex: ALB Security Group)
+  - Add inbound rules for each one, the configurations for each one are provided above
+  - After making all of these security groups we have 6 total security groups in the VPC, these 5 made and the default one
